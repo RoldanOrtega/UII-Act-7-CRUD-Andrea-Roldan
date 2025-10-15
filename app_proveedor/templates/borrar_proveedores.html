@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmar Borrado</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .btn { padding: 10px 15px; text-decoration: none; color: white; margin: 5px; }
+        .confirmar { background-color: #DC3545; }
+        .cancelar { background-color: #6c757d; }
+    </style>
+</head>
+<body>
+    <h1>¿Estás seguro de que deseas borrar este Proveedor?</h1>
+        <p><strong>Nombre de empresa:</strong> {{ proveedores.nombre_empresa }}</p>
+        <p><strong>nombre de contacto:</strong> {{ proveedores.contacto_nombre }}</p>
+        <p><strong>Teléfono de contacto:</strong> {{ proveedores.contacto_telefono }}</p>
+        <p><strong>Email de contacto:</strong> {{ proveedores.contacto_email }}</p>
+        <p><strong>Direccion:</strong> {{ proveedores.direccion }}</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn confirmar">Sí, Borrar</button>
+    </form>
+    <a href="/" class="btn cancelar">Cancelar</a>
+</body>
+</html>
